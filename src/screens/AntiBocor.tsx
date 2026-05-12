@@ -1,10 +1,39 @@
+import { Droplets, Layers, ZapOff, CloudRain } from 'lucide-react'
 import WhatsAppCTA from '../components/paint/WhatsAppCTA'
+import type { ReactNode } from 'react'
 
-const problems = [
-  { seed: 'mold-wall2', title: 'Jamur & Lembap', solution: 'WarnaSeal + WarnaFresh Anti-Jamur' },
-  { seed: 'peeling2', title: 'Cat Mengelupas', solution: 'Scraping + WarnaBase Primer + Cat Baru' },
-  { seed: 'crack-wall2', title: 'Retak Rambut', solution: 'Patching Compound + Pengecatan Ulang' },
-  { seed: 'water-seepage', title: 'Rembes / Bocor', solution: 'WarnaSeal Waterproofing System' },
+interface Problem {
+  title: string
+  solution: string
+  bgClass: string
+  icon: ReactNode
+}
+
+const problems: Problem[] = [
+  {
+    title: 'Jamur & Lembap',
+    solution: 'WarnaSeal + WarnaFresh Anti-Jamur',
+    bgClass: 'from-emerald-900 via-green-800 to-teal-700',
+    icon: <Droplets size={48} className="text-emerald-200 opacity-70" />,
+  },
+  {
+    title: 'Cat Mengelupas',
+    solution: 'Scraping + WarnaBase Primer + Cat Baru',
+    bgClass: 'from-orange-900 via-amber-700 to-amber-500',
+    icon: <Layers size={48} className="text-orange-200 opacity-70" />,
+  },
+  {
+    title: 'Retak Rambut',
+    solution: 'Patching Compound + Pengecatan Ulang',
+    bgClass: 'from-stone-800 via-stone-600 to-stone-400',
+    icon: <ZapOff size={48} className="text-stone-200 opacity-70" />,
+  },
+  {
+    title: 'Rembes / Bocor',
+    solution: 'WarnaSeal Waterproofing System',
+    bgClass: 'from-blue-950 via-blue-800 to-blue-600',
+    icon: <CloudRain size={48} className="text-blue-200 opacity-70" />,
+  },
 ]
 
 export default function AntiBocor() {
@@ -31,13 +60,10 @@ export default function AntiBocor() {
         <h2 className="font-serif text-2xl text-ink-900 mb-6">Kenali Masalah Dinding Anda</h2>
         <div className="grid sm:grid-cols-2 gap-6 mb-10">
           {problems.map(p => (
-            <div key={p.seed} className="bg-white rounded-2xl overflow-hidden border border-ink-500/10 shadow-sm hover:shadow-md transition-shadow">
-              <img
-                src={`https://picsum.photos/seed/${p.seed}/600/250`}
-                alt={p.title}
-                className="w-full h-48 object-cover"
-                loading="lazy"
-              />
+            <div key={p.title} className="bg-white rounded-2xl overflow-hidden border border-ink-500/10 shadow-sm hover:shadow-md transition-shadow">
+              <div className={`h-48 bg-gradient-to-br ${p.bgClass} flex items-center justify-center`}>
+                {p.icon}
+              </div>
               <div className="p-5">
                 <h3 className="font-semibold text-ink-900 mb-2">{p.title}</h3>
                 <div className="text-sm text-ink-500">Solusi: <span className="text-forest-700 font-medium">{p.solution}</span></div>

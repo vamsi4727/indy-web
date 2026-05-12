@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { MessageCircle, Package, Droplets, HardHat, ArrowRight, Star, Moon, CheckCircle } from 'lucide-react'
+import { MessageCircle, Package, Droplets, HardHat, ArrowRight, Star, Moon, CheckCircle, Layers, ZapOff, CloudRain } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
 import ButtonLink from '../components/ui/ButtonLink'
 import RoomCard from '../components/paint/RoomCard'
@@ -34,10 +34,10 @@ export default function Home() {
   ]
 
   const problemItems = [
-    { seed: 'mold-wall', label: t.problem.mold },
-    { seed: 'peeling-paint', label: t.problem.peeling },
-    { seed: 'crack-wall', label: t.problem.crack },
-    { seed: 'water-stain', label: t.problem.water },
+    { label: t.problem.mold, bgClass: 'from-emerald-900 via-green-800 to-teal-700', icon: <Droplets size={36} className="text-emerald-200 opacity-70" /> },
+    { label: t.problem.peeling, bgClass: 'from-orange-900 via-amber-700 to-amber-500', icon: <Layers size={36} className="text-orange-200 opacity-70" /> },
+    { label: t.problem.crack, bgClass: 'from-stone-800 via-stone-600 to-stone-400', icon: <ZapOff size={36} className="text-stone-200 opacity-70" /> },
+    { label: t.problem.water, bgClass: 'from-blue-950 via-blue-800 to-blue-600', icon: <CloudRain size={36} className="text-blue-200 opacity-70" /> },
   ]
 
   return (
@@ -96,7 +96,7 @@ export default function Home() {
             <div className="relative hidden lg:block">
               <div className="relative -rotate-1 rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://picsum.photos/seed/livingroom/800/600"
+                  src="https://images.unsplash.com/photo-1586105251261-72a756497a11?w=800&h=600&fit=crop&q=80"
                   alt="Ruang tamu dengan warna WarnaRumah AI"
                   className="w-full aspect-[4/3] object-cover"
                 />
@@ -200,13 +200,10 @@ export default function Home() {
 
             <div className="grid grid-cols-2 gap-3">
               {problemItems.map(item => (
-                <div key={item.seed} className="relative rounded-xl overflow-hidden aspect-square bg-ink-900/10">
-                  <img
-                    src={`https://picsum.photos/seed/${item.seed}/300/300`}
-                    alt={item.label}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
+                <div key={item.label} className={`relative rounded-xl overflow-hidden aspect-square bg-gradient-to-br ${item.bgClass}`}>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    {item.icon}
+                  </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                   <div className="absolute bottom-3 left-3 text-white font-semibold text-sm">{item.label}</div>
                 </div>

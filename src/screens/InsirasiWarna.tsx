@@ -1,10 +1,17 @@
 import { Bell } from 'lucide-react'
 import WhatsAppCTA from '../components/paint/WhatsAppCTA'
 
-const inspirations = Array.from({ length: 9 }, (_, i) => ({
-  seed: `inspiration-${i + 1}`,
-  label: ['Ruang Tamu Modern', 'Kamar Tidur Minimalis', 'Dapur Ceria', 'Teras Tropis', 'Kamar Mandi Spa', 'Ruang Keluarga', 'Eksterior Elegan', 'Musholla Tenang', 'Kamar Anak'][i],
-}))
+const inspirations = [
+  { image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop&q=80', label: 'Ruang Tamu Modern' },
+  { image: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?w=400&h=300&fit=crop&q=80', label: 'Kamar Tidur Minimalis' },
+  { image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop&q=80', label: 'Dapur Ceria' },
+  { image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=300&fit=crop&q=80', label: 'Teras Tropis' },
+  { image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&h=300&fit=crop&q=80', label: 'Kamar Mandi Spa' },
+  { image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=400&h=300&fit=crop&q=80', label: 'Ruang Keluarga' },
+  { image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=300&fit=crop&q=80', label: 'Eksterior Elegan' },
+  { image: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=400&h=300&fit=crop&q=80', label: 'Musholla Tenang' },
+  { image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop&q=80', label: 'Kamar Anak' },
+]
 
 export default function InsirasiWarna() {
   return (
@@ -46,9 +53,9 @@ export default function InsirasiWarna() {
         <h2 className="font-serif text-2xl text-ink-900 mb-6">Inspirasi Populer</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
           {inspirations.map(item => (
-            <div key={item.seed} className="relative rounded-xl overflow-hidden bg-cream-100">
+            <div key={item.label} className="relative rounded-xl overflow-hidden bg-cream-100">
               <img
-                src={`https://picsum.photos/seed/${item.seed}/400/300`}
+                src={item.image}
                 alt={item.label}
                 className="w-full h-48 object-cover"
                 loading="lazy"

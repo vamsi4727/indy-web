@@ -8,6 +8,16 @@ import { useLanguage } from '../../context/LanguageContext'
 
 const DAMP_CONDITIONS = ['mold', 'damp', 'water']
 
+const CONDITION_GRADIENTS: Record<string, string> = {
+  faded: 'linear-gradient(135deg, #9a9490 0%, #d4cfc9 100%)',
+  peeling: 'linear-gradient(135deg, #c4622d 0%, #e8a87c 50%, #f5ead5 100%)',
+  mold: 'linear-gradient(135deg, #1a4a3a 0%, #2d6a4f 50%, #52796f 100%)',
+  damp: 'linear-gradient(135deg, #1a3a5c 0%, #2d5f8a 50%, #a8d5e8 100%)',
+  crack: 'linear-gradient(135deg, #4a4a4a 0%, #6e6e6e 50%, #b0ada8 100%)',
+  water: 'linear-gradient(135deg, #0f3460 0%, #1a5276 50%, #7fb3c8 100%)',
+  new: 'linear-gradient(135deg, #f5ead5 0%, #fafaf8 100%)',
+}
+
 export default function Step4_WallCondition() {
   const { state, dispatch } = useAssistant()
   const { t } = useLanguage()
@@ -31,7 +41,7 @@ export default function Step4_WallCondition() {
             key={opt.value}
             value={opt.value}
             label={opt.label}
-            thumbnail={`https://picsum.photos/seed/${opt.value}-wall/160/80`}
+            gradient={CONDITION_GRADIENTS[opt.value]}
             selected={state.wall_condition.includes(opt.value)}
             onSelect={handleSelect}
           />

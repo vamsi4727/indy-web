@@ -24,7 +24,7 @@ export const palettes: Palette[] = [
     name: 'Adem Lebaran',
     description: 'Kombinasi krem hangat, sage lembut, dan putih bersih yang menghadirkan nuansa syukur dan ketenangan di hari raya.',
     badge: 'seasonal',
-    image: 'https://picsum.photos/seed/livingroom1/600/400',
+    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=400&fit=crop&q=80',
     colours: [
       { name: 'Warm Cream', code: 'WR-C401', hex: '#F5EAD5', role: 'main' },
       { name: 'Soft Sage', code: 'WR-G210', hex: '#8db09b', role: 'accent' },
@@ -40,7 +40,7 @@ export const palettes: Palette[] = [
     name: 'Modern Bersih',
     description: 'Putih hangat, abu-abu sejuk, dan putih murni — perpaduan abadi untuk rumah modern yang bersih dan elegan.',
     badge: 'editor',
-    image: 'https://picsum.photos/seed/bedroom2/600/400',
+    image: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600&h=400&fit=crop&q=80',
     colours: [
       { name: 'Soft White', code: 'WR-W102', hex: '#F0EDE8', role: 'main' },
       { name: 'Cool Grey', code: 'WR-G305', hex: '#9A9490', role: 'accent' },
@@ -55,7 +55,7 @@ export const palettes: Palette[] = [
     id: 'hangat-tropis',
     name: 'Hangat Tropis',
     description: 'Beige tanah liat, hijau tropis yang segar, dan off white — merayakan keindahan alam Nusantara.',
-    image: 'https://picsum.photos/seed/tropical3/600/400',
+    image: 'https://images.unsplash.com/photo-1600210492486-724cf85e3b6d?w=600&h=400&fit=crop&q=80',
     colours: [
       { name: 'Clay Beige', code: 'WR-B520', hex: '#C4A882', role: 'main' },
       { name: 'Tropical Green', code: 'WR-G115', hex: '#5A8F6E', role: 'accent' },
@@ -71,7 +71,7 @@ export const palettes: Palette[] = [
     name: 'Japandi Tenang',
     description: 'Pasir hangat, arang elegan, dan putih nasi — ketenangan gaya Jepang-Skandinavia untuk jiwa yang damai.',
     badge: 'new',
-    image: 'https://picsum.photos/seed/japandi4/600/400',
+    image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&h=400&fit=crop&q=80',
     colours: [
       { name: 'Warm Sand', code: 'WR-B410', hex: '#D9C4A0', role: 'main' },
       { name: 'Charcoal', code: 'WR-D601', hex: '#3d4549', role: 'accent' },
@@ -86,7 +86,7 @@ export const palettes: Palette[] = [
     id: 'bumi-nusantara',
     name: 'Bumi Nusantara',
     description: 'Terracotta lembut, hijau hutan dalam, dan gading hangat — palet yang merayakan kekayaan bumi Indonesia.',
-    image: 'https://picsum.photos/seed/nusantara5/600/400',
+    image: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=600&h=400&fit=crop&q=80',
     colours: [
       { name: 'Terracotta Soft', code: 'WR-T301', hex: '#C4622D', role: 'main' },
       { name: 'Deep Forest', code: 'WR-G701', hex: '#1a4a3a', role: 'accent' },
